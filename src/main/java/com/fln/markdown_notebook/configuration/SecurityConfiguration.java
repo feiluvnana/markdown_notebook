@@ -15,16 +15,16 @@ import org.springframework.security.web.SecurityFilterChain;
 class SecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-            .cors(AbstractHttpConfigurer::disable)
+        http.cors(AbstractHttpConfigurer::disable)
             .csrf(AbstractHttpConfigurer::disable)
-            .authorizeHttpRequests(auth -> {
+            .authorizeHttpRequests(
+                auth -> {
                     auth.anyRequest().permitAll();
-                }
-            )
-            .sessionManagement((session) -> {
-                session.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-            })
+                })
+            .sessionManagement(
+                (session) -> {
+                    session.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                })
             .formLogin(AbstractHttpConfigurer::disable);
         return http.build();
     }

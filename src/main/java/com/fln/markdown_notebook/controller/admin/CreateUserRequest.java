@@ -1,4 +1,4 @@
-package com.fln.markdown_notebook.controller.request;
+package com.fln.markdown_notebook.controller.admin;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

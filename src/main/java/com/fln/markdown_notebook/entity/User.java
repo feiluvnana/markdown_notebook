@@ -23,8 +23,7 @@ import java.util.Collections;
 @AllArgsConstructor
 @JsonAutoDetect(
     getterVisibility = JsonAutoDetect.Visibility.NONE,
-    isGetterVisibility = JsonAutoDetect.Visibility.NONE
-)
+    isGetterVisibility = JsonAutoDetect.Visibility.NONE)
 @Entity
 public class User implements UserDetails {
     @JsonProperty
@@ -61,6 +60,7 @@ public class User implements UserDetails {
     }
 
     public enum UserRole {
-        ADMIN, USER
+        ADMIN,
+        USER
     }
 }

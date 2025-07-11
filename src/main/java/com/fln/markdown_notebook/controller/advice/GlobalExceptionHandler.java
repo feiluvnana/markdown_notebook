@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @AllArgsConstructor
 class GlobalExceptionHandler {
     final ObjectMapper mapper;
-    
+
     @ExceptionHandler(Exception.class)
     public String handleException(Exception e) throws JsonProcessingException {
         return mapper.writer().withDefaultPrettyPrinter().writeValueAsString(e);
